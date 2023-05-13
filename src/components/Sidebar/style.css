@@ -1,0 +1,33 @@
+.back_parent {
+    background: #2C2C2E;
+    width: 32px;
+    height: 32px;
+}
+
+.bgColor {
+    background: #1C1C1E;
+    height: 100vh;
+}
+
+.borderStyle {
+    border: 3px solid #2C2C2E;
+}
+
+.fontStyle {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.border_style:first-child {
+    border-top: 1px solid #2C2C2E;
+}
+
+.border_style {
+    border-bottom: 1px solid #2C2C2E;
+}
+
+.logOutStyle {
+    color: var(--yello);
+    font-weight: 600;
+    font-size: 17px;
+}
