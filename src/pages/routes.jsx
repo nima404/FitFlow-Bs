@@ -4,6 +4,7 @@ import { PrivateRoute } from "../components/privateRoute";
 import { Dashboard } from "./dashboard";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
+import { DashboardSetting } from "./dashboard/setting";
 
 export const Routers = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -17,9 +18,8 @@ export const Routers = () => {
                 <Route path="*" element={<div>not found</div>} />
 
                 <Route path='/' element={<PrivateRoute isAuthentic={isAuthenticated} />} >
-                    {/* specify private routes here  */}
                     <Route path='/dashboard' element={<Dashboard />} />
-                    {/* <Route path='/dashboard/setting' element={<DashboardSetting />} /> */}
+                    <Route path='/dashboard/setting' element={<DashboardSetting />} />
                 </Route>
             </Routes>
         </Container>
