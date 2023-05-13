@@ -40,7 +40,7 @@ export const Sidebar = ({ state, setState }) => {
                         pages.map((node, _) => {
                             return <Col key={`${node.title}_${_}`} sm={12} className="d-flex flex-row-reverse justify-content-between align-items-center py-4 border_style">
                                 <img src={rightArr} />
-                                <h5>{node.title}</h5>
+                                <h5 className="pagestitle">{node.title}</h5>
                             </Col>
                         })
                     }
