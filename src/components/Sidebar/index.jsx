@@ -6,6 +6,7 @@ import profileImg from '../../assets/images/profile.png';
 import { useState } from "react";
 
 export const Sidebar = ({ state, setState }) => {
+
     const [pages, setPages] = useState([
         { title: "Activiteiten Geschiedenis", route: "" },
         { title: "Training Vooruitgang", route: "" },

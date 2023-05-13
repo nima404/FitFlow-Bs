@@ -16,5 +16,41 @@
 .plus-bg-style {
     background: linear-gradient(274.42deg, #DA840D 0%, #FFDB72 124.45%);
     width: 48px;
+    /* margin-top: 40px !important; */
     height: 48px;
+    border: none !important;
+}
+
+.activity_title {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.activity_Box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.activity_item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+
+.activity_img {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(0deg, #FFDB72, #FFDB72);
+    border-radius: 14px;
+}
+
+.activity_item h5 {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.mb100{
+    margin-bottom: 100px !important;
 }
