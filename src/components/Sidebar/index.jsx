@@ -38,8 +38,8 @@ export const Sidebar = ({ state, setState }) => {
 
                 <Row className="px-4 mt-5">
                     {
-                        pages.map((node, _) => {
-                            return <Col key={`${node.title}_${_}`} sm={12} className="d-flex flex-row-reverse justify-content-between align-items-center py-4 border_style">
+                        pages.map((node, index) => {
+                            return <Col key={`${node.title}_${index}`} sm={12} className="d-flex flex-row-reverse justify-content-between align-items-center py-4 border_style">
                                 <img src={rightArr} />
                                 <h5 className="pagestitle">{node.title}</h5>
                             </Col>

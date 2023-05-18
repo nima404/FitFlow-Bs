@@ -10,7 +10,7 @@ export const Routers = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(true);
 
     return (
-        <Container className="paeg_container">
+        <Container className="page_container">
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 {/* <Route path="/sign-up" element={<SignUp />} /> */}
