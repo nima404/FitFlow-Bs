@@ -1,0 +1,29 @@
+.skip {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--yello);
+}
+
+.back_title {
+    font-size: 20px !important;
+    margin-left: 20px !important;
+}
+
+.afterStyle {
+    right: 3px !important;
+    top: 3px !important;
+    background: linear-gradient(274.42deg, #DA840D 0%, #FFDB72 124.45%) !important;
+    border-radius: 14px !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.selectCustom_style {
+    background-image: url(../../../assets/icons/left-arrow.png) !important;
+    color: #ffffff;
+    background-repeat: no-repeat !important;
+    background-position: 95% !important;
+    background-size: 20px !important;
+}

@@ -1,0 +1,25 @@
+.LoginStyle {
+    text-align: right;
+    color: var(--yello);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.customBtn_styl {
+    background-color: #2C2C2E !important;
+    border: 1px solid #6C6363 !important;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    height: 48px !important;
+}
+
+.customBtnSignup_style {
+    color: var(--yello);
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #262624 !important;
+    border: none !important;
+    height: 39px !important;
+    border-radius: 14px !important;
+}

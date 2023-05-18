@@ -5,6 +5,8 @@ import { Dashboard } from "./dashboard";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { DashboardSetting } from "./dashboard/setting";
+import { SignUp } from "./sign-up";
+import { LoadSignupData } from "./sign-up/LoadData";
 
 export const Routers = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -13,7 +15,9 @@ export const Routers = () => {
         <Container className="page_container">
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                {/* <Route path="/sign-up" element={<SignUp />} /> */}
+
+                <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/sign-up/load-data" element={<LoadSignupData />} />
 
                 <Route path="*" element={<div>not found</div>} />
 
