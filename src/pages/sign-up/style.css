@@ -1,0 +1,39 @@
+.arrL_style {
+    width: 32px !important;
+    height: 32px !important;
+    background-color: #2C2C2E !important;
+}
+
+.back_title {
+    font-weight: 600;
+    font-size: 25px;
+    margin-left: 35px !important;
+}
+
+.lableCustom_style {
+    font-weight: 600 !important;
+    font-size: 17px !important;
+}
+
+.inputCustom_style {
+    height: 54px !important;
+    border-radius: 8px !important;
+    background: #2C2C2E !important;
+    border: 1px solid rgba(105, 105, 105, 0.25) !important;
+}
+
+.submitBtnCustom_style {
+    background-color: var(--yello) !important;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.login {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.login span {
+    font-weight: 700;
+    color: var(--yello);
+}
