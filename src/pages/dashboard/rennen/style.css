@@ -1,0 +1,46 @@
+/* @keyframes pulse2 {
+    0% {
+        background-color: #FFDB72 !important;
+    }
+
+    100% {
+        background-color: rgba(244, 169, 57, 0.2) !important;
+    }
+} */
+
+.back_title {
+    margin-left: 10px !important;
+    font-size: 26px !important;
+}
+
+.btnActionStyle {
+    border-radius: 50% !important;
+    width: 100px !important;
+    height: 100px !important;
+    background-color: #FFDB72 !important;
+    border: none !important;
+    outline: 15px solid #DA840D !important;
+
+    /* transition: all 5s cubic-bezier(0.87, -0.31, 0.19, 1.44) !important;
+    z-index: 9 !important;
+    animation: pulse2 1.5s infinite !important; */
+}
+
+.inpCustom {
+    border: none !important;
+    background: none !important;
+    height: 59px !important;
+    font-weight: 300 !important;
+    color: white !important;
+    font-size: 48px !important;
+}
+
+.inpCustom::placeholder {
+    font-weight: 300 !important;
+    color: white !important;
+    font-size: 48px !important;
+}
+
+.inpCustom:focus {
+    box-shadow: none !important;
+}

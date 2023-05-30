@@ -7,6 +7,7 @@ import { Container } from "react-bootstrap";
 import { DashboardSetting } from "./dashboard/setting";
 import { SignUp } from "./sign-up";
 import { LoadSignupData } from "./sign-up/LoadData";
+import { Rennen } from "./dashboard/rennen";
 
 export const Routers = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -24,6 +25,7 @@ export const Routers = () => {
                 <Route path='/' element={<PrivateRoute isAuthentic={isAuthenticated} />} >
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/dashboard/setting' element={<DashboardSetting />} />
+                    <Route path='/dashboard/rennen' element={<Rennen />} />
                 </Route>
             </Routes>
         </Container>
