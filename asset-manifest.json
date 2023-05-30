@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/FitFlow-Bs/static/css/main.c6f6ea2e.css",
+    "main.js": "/FitFlow-Bs/static/js/main.9995e28a.js",
+    "static/js/787.727d3cc0.chunk.js": "/FitFlow-Bs/static/js/787.727d3cc0.chunk.js",
+    "static/media/profile.png": "/FitFlow-Bs/static/media/profile.62ec66d871c3d00b9b78.png",
+    "index.html": "/FitFlow-Bs/index.html",
+    "main.c6f6ea2e.css.map": "/FitFlow-Bs/static/css/main.c6f6ea2e.css.map",
+    "main.9995e28a.js.map": "/FitFlow-Bs/static/js/main.9995e28a.js.map",
+    "787.727d3cc0.chunk.js.map": "/FitFlow-Bs/static/js/787.727d3cc0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6f6ea2e.css",
+    "static/js/main.9995e28a.js"
+  ]
+}
