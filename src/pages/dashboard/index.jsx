@@ -1,4 +1,4 @@
-import { useState } from "react"
+import {useEffect, useState} from "react"
 import { Sidebar } from "../../components/Sidebar"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import { BottomNavbar } from "../../components/BottomNavbar"
@@ -11,6 +11,7 @@ import run from '../../assets/icons/run.png'
 import bic from '../../assets/icons/ion_bicycle-sharp.png';
 import sport from '../../assets/icons/sport.png';
 import { Link, useLocation } from "react-router-dom";
+import {GetUserActivity} from "./service";
 
 export const Dashboard = () => {
     const [sidebarState, setSidebarState] = useState(false)
@@ -29,6 +30,18 @@ export const Dashboard = () => {
 
     const pushActivityHandler = (node) => {
     }
+
+    const [userActivity , setUserActivity] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const test = await GetUserActivity("activities/getActivities/1");
+            setUserActivity(test)
+        };
+        fetchData();
+    }, []);
+
+
     return (
         <>
             <Sidebar state={sidebarState} setState={setSidebarState} />
@@ -81,6 +94,30 @@ export const Dashboard = () => {
                                 }
                             </Col>
                         </Row>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col>
+
+                        {
+                            userActivity.length !== 0 &&
+                                userActivity.map((node, index)=>{
+                                    return <div>
+                                        <h5>{node.activityType}</h5>
+                                        <h5>{node.dateOfCreation}</h5>
+                                        <h5>{node.description}</h5>
+                                        <h5>{node.distanceInKm}</h5>
+                                        <h5>{node.durationInMinutes}</h5>
+                                        {
+                                            node.kmPerHour !== 0 && null ? <h5>kmPerHour: {node.kmPerHour}</h5> : ""
+                                        }
+                                        {
+                                            node.minPerKm !== 0 && null ? <h5>minPerKm: {node.minPerKm}</h5> : ""
+                                        }
+                                    </div>
+                                })
+                        }
                     </Col>
                 </Row>
             </Container >

@@ -20,9 +20,16 @@
     border-radius: 8px !important;
     background: #2C2C2E !important;
     border: 1px solid rgba(105, 105, 105, 0.25) !important;
+    color: #FFFFFF;
+}
+.submitBtnCustom_style:hover , .submitBtnCustom_style:focus{
+    border: none !important;
+    outline:none !important;
+    box-shadow: none !important;
 }
 
 .submitBtnCustom_style {
+    border:none !important;
     background-color: var(--yello) !important;
     font-weight: 600;
     font-size: 22px;

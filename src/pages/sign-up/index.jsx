@@ -1,9 +1,30 @@
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap"
 import './style.css';
 import ArrL from '../../assets/icons/left-arrow.png';
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 export const SignUp = () => {
+    const [data , setData] = useState({
+        fullName:"",
+        email:"",
+        password:""
+    })
+
+    useEffect(()=>{
+        console.log("data" , data)
+    } , [data])
+    const router = useNavigate()
+    const pushDataHandler = ()=>{
+        const values = Object.values(data);
+        const every = values.every((item)=> !!item == true)
+        if(every){
+            localStorage.setItem("datas" , JSON.stringify(data))
+            router('/sign-up/load-data')
+        }else{
+            window.location.reload()
+        }
+    }
     return (
         <Container>
             <Row className="mt-5 d-flex justify-content-start align-items-center">
@@ -18,30 +39,26 @@ export const SignUp = () => {
             </Row>
 
             <Row className="mt-5">
-                <Form className="mt-4">
                     <Form.Group className="mb-4" controlId="formBasicEmail">
                         <Form.Label className="lableCustom_style">Volledige naam</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" className="mt-2 px-3 inputCustom_style" />
+                        <Form.Control type={"text"} placeholder="naam" className="mt-2 px-3 inputCustom_style" onChange={(e)=> setData({...data , fullName:e.target.value})}/>
                     </Form.Group>
 
                     <Form.Group className="mb-4" controlId="formBasicEmail">
                         <Form.Label className="lableCustom_style">E-mailadres</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" className="mt-2 px-3 inputCustom_style" />
+                        <Form.Control type="email" placeholder="email" className="mt-2 px-3 inputCustom_style" onChange={(e)=> setData({...data , email:e.target.value})}/>
                     </Form.Group>
 
                     <Form.Group className="mb-5" controlId="formBasicEmail">
                         <Form.Label className="lableCustom_style">Wachtwoord</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" className="mt-2 px-3 inputCustom_style" />
+                        <Form.Control type={"password"} placeholder="Wachtwoord" className="mt-2 px-3 inputCustom_style" onChange={(e)=> setData({...data , password:e.target.value})}/>
                     </Form.Group>
 
                     <Col>
-                        <Link to={'/sign-up/load-data'}>
-                            <Button className="w-100 py-3 submitBtnCustom_style text-dark" type="submit">
+                            <Button className="w-100 py-3 submitBtnCustom_style text-dark" type="submit" onClick={pushDataHandler}>
                                 Account aanmaken
                             </Button>
-                        </Link>
                     </Col>
-                </Form>
             </Row>
 
             <Row className="my-5">
