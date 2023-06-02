@@ -7,7 +7,9 @@ export const HomePage = () => {
         <Container className="mt-3">
             <Row className="mt-5">
                 <Col sm={12} >
-                    <h5 className="LoginStyle">Log in</h5>
+                    <Link to={'/login'}>
+                        <h5 className="LoginStyle">Log in</h5>
+                    </Link>
                 </Col>
             </Row>
 
