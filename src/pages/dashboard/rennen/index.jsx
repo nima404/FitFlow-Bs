@@ -18,15 +18,21 @@ export const Rennen = () => {
     const stopHandler = ()=>{
         const Values = Object.values(data)
         const every = Values.every((i)=> i !== null)
+
 if(every){
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJodWlmQGdtYWlsLmNvbSIsImlhdCI6MTY4NTY5MzY4NCwiZXhwIjoxNjg1NzgwMDg0fQ.3kI7z6dJdAUzjVvthw41B7AIWmEW7ZVPu8J6E4InSickaYBUU0AaDIZJK_wsjTSl1tpVNtwG34xNcS59aaAV4A");
+
     var formdata = new FormData();
+
     formdata.append("durationInMinutes", data.durationInMinutes);
     formdata.append("description", data.description);
     formdata.append("distanceInKm", data.distanceInKm);
-    formdata.append("userId", "1");
 
     var requestOptions = {
         method: 'POST',
+        headers: myHeaders,
         body: formdata,
         redirect: 'follow'
     };
@@ -35,6 +41,7 @@ if(every){
         .then(response => response.text())
         .then(result => {
             console.log(result)
+
             const parse = JSON.parse(result)
             if(parse.message == "Running activity added successfully"){
                 router("/dashboard")
