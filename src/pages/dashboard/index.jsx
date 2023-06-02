@@ -10,10 +10,12 @@ import plus from '../../assets/icons/Vector (12).png';
 import run from '../../assets/icons/run.png'
 import bic from '../../assets/icons/ion_bicycle-sharp.png';
 import sport from '../../assets/icons/sport.png';
-import { Link, useLocation } from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {GetUserActivity} from "./service";
+import {GetToken} from "../../components/getToken";
 
 export const Dashboard = () => {
+    const [token , setToken] = useState(GetToken())
     const [sidebarState, setSidebarState] = useState(false)
     const [activityState, setActivityState] = useState(false)
 
@@ -26,16 +28,20 @@ export const Dashboard = () => {
         { title: "Rennen", img: run, route: "/" },
     ])
 
-    const router = useLocation()
+    const router = useNavigate()
 
     const pushActivityHandler = (node) => {
     }
 
     const [userActivity , setUserActivity] = useState([])
 
+    if(!token){
+        router("/login")
+    }
+
     useEffect(() => {
         const fetchData = async () => {
-            const test = await GetUserActivity("activities/getActivities/1");
+            const test = await GetUserActivity("activities/getActivities" , token);
             setUserActivity(test)
         };
         fetchData();
@@ -101,7 +107,7 @@ export const Dashboard = () => {
                     <Col>
 
                         {
-                            userActivity.length !== 0 &&
+                            userActivity.length !== 0 ?
                                 userActivity.map((node, index)=>{
                                     return <div>
                                         <h5>{node.activityType}</h5>
@@ -117,6 +123,8 @@ export const Dashboard = () => {
                                         }
                                     </div>
                                 })
+                                :
+                                <div>new user</div>
                         }
                     </Col>
                 </Row>

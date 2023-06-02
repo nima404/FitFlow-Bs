@@ -1,10 +1,10 @@
-export const GetUserActivity = async (url ) =>{
+export const GetUserActivity = async (url  , token = "") =>{
     try {
         const response = await fetch(`http://localhost:8081/${url}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                // 'Content-Type': 'application/x-www-form-urlencoded',
+                "Authorization" : `Bearer ${token}`
             },
             redirect: "follow",
         });
